@@ -1,0 +1,7 @@
+.box{
+  height: 190px;
+  padding: 8px;
+  text-align: center;
+}
+.box:nth-child(even) {background: #cccccc}
+.box:nth-child(odd) {background: #aaaaaa}
