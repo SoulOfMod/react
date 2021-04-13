@@ -1,9 +1,6 @@
 import React from "react";
 
 
-const onHeartChange = () => {
-  this.setState({ heart: this.state.value });
-}
 
 class Box extends React.Component {
 
@@ -13,7 +10,7 @@ class Box extends React.Component {
 
     const slider = () => {
         if (this.props.unit !== "L") {
-          return (<input type="range" min={this.props.stepsMin} max={this.props.stepsMax} value={this.props.value} oninput></input>)
+          return (<input type="range" min={this.props.min} max={this.props.max} value={this.props.value} onInput={this.props.onChangeSlider}></input>)
         }
     };
 
