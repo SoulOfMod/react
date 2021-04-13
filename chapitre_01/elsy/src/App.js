@@ -33,38 +33,43 @@ class App extends React.Component {
     this.setState({
       heart: event.target.value
     })
+    this.calculateWater()
     console.log(this.state.heart);
   }
   onStepsChange(event) {
     this.setState({
       steps: event.target.value
     })
+    this.calculateWater()
     console.log(this.state.steps);
   }
   onTempChange(event) {
     this.setState({
       temperature: event.target.value
     })
+    this.calculateWater()
     console.log(this.state.temperature);
   }
+  
   calculateWater() {
-    if (this.state.temperature >= 20) {
-        this.water = this.state.water + 0.02
-        console.log("hello");
-      }
+    let tempAdd =0;
+    let heartAdd =0;
+    let stepsAdd = 0;
+    if (this.state.temperature > 20) {
+      tempAdd = 0.02 * (this.state.temperature - 20)
+      console.log(tempAdd);
     }
-    else if (this.state.heart >= 120) {
-      for (let i = 120; i < this.state.heart.length; i++) {
-        this.water = this.state.water + 0.0008
-        console.log("hello");
-      }
+    if (this.state.heart > 120) {
+      heartAdd = 0.0008 * (this.state.heart - 120)
+      console.log(heartAdd);
     }
-    else if (this.state.steps >= 10000) {
-      for (let i = 10000; i < this.state.steps.length; i++) {
-        this.water = this.state.water + 0.00002
-        console.log("hello");
-      }
+    if (this.state.steps > 10000) {
+      stepsAdd = 0.00002 * (this.state.steps - 10000)
+      console.log(stepsAdd);
     }
+    let total = tempAdd + heartAdd + stepsAdd;
+    this.setState({ water: (1.5 + total ).toFixed(2)})
+  
   }
 
   // calculateWater(event) {
@@ -96,7 +101,7 @@ class App extends React.Component {
       <div className="container-fluid">
         <div className="row">
           {/* Water */}
-          < Box color="#3A85FF" icon="local_drink" value={this.state.water} unit="L" onChange={this.calculateWater()} />
+          < Box color="#3A85FF" icon="local_drink" value={this.state.water} unit="L" />
           {/* Steps */}
           < Box color="black" icon="directions_walk" min={stepsMin} max={stepsMax} value={this.state.steps} unit="steps" onChangeSlider={this.onStepsChange} />
           {/* Heart */}
