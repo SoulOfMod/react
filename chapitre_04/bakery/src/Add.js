@@ -6,11 +6,11 @@ import React from "react";
 
 class Add extends React.Component {
 
-  renderContent() {
+  render() {
     return (
       <section>
         <h1>Add</h1>
-        <h2>Learning React</h2>
+        <form placeholder="test">Add</form>
       </section>
     );
   }

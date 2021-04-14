@@ -6,11 +6,11 @@ import React from "react";
 
 class Pay extends React.Component {
 
-  renderContent() {
+  render() {
     return (
       <section>
         <h1>Pay</h1>
-        <h2>Learning React</h2>
+        <h2>No item available</h2>
       </section>
     );
   }
