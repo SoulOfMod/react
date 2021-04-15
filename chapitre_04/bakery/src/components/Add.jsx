@@ -11,8 +11,6 @@ class Add extends React.Component {
       <section>
         <h1>Add</h1>
         <form placeholder="test">Add</form>
-        <select value={this.state.value} onChange={this.handleChange}>
-
       </section>
     );
   }

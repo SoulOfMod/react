@@ -10,7 +10,12 @@ class Button extends React.Component {
     return (
       <section>
         <h1>Button</h1>
-        <button isSelected={this.props.isSelected} onClick={this.props.newRender}></button>
+        <button className={this.props.isSelected} onClick={this.props.onClick}>
+
+          {this.props.children}
+
+        </button>
+
       </section>
     );
   }
