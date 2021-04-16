@@ -43,6 +43,15 @@ class App extends React.Component {
     <Add></Add>
   }
 
+  Listrender(){
+
+    <List></List>
+  }
+
+  Payrender(){
+
+    <Pay></Pay>
+  }
 
   render() {
     return (
@@ -50,11 +59,11 @@ class App extends React.Component {
         <h1>Bakery</h1>
         <ul className="header">
           <li><button className={this.state.activeTab === "add" ? "btn btn-primary" : "btn btn-light"}
-            onClick={this.onClickAdd}> Add </button></li>
+            onClick={this.onClickAdd(this.Addrender)}> Add </button></li>
           <li><button className={this.state.activeTab === "list" ? "btn btn-primary" : "btn btn-light"}
-            onClick={this.onClickList}> List </button></li>
+            onClick={this.onClickList(this.Listrender)}> List </button></li>
           <li><button className={this.state.activeTab === "pay" ? "btn btn-primary" : "btn btn-light"}
-            onClick={this.onClickPay}> Pay </button></li>
+            onClick={this.onClickPay(this.Payrender)}> Pay </button></li>
         </ul>
         <div className="content">
 
