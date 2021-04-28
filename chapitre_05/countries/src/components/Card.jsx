@@ -13,8 +13,8 @@ class Card extends React.Component {
        <div>
           <p>Name = {this.props.name}</p>
           <p>Capital = {this.props.capital}</p>
-          <p>Flag = {this.props.flag}</p>
-          <p>Population =  {this.props.population}</p>
+          <p>Flag = <img src={this.props.flag} alt="flag"/></p>
+          <p>Population =  {this.props.population} </p>
           <p>Region = {this.props.region}</p>
         </div>
       </section>
