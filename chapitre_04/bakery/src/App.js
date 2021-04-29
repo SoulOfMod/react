@@ -41,8 +41,8 @@ class App extends React.Component {
     })
   }
 
-  addItem(n,p) {
-    const item = { "name": n, "price": parseInt(p) }
+  addItem(name, price) {
+    const item = { "name": name, "price": parseInt(price) }
     this.setState({
       items: [...this.state.items, item]
     })
@@ -53,11 +53,11 @@ class App extends React.Component {
 
     if (this.state.activeTab === "add") {
 
-      return <Add addingItem={this.addItem}/>
-    
+      return <Add addingItem={this.addItem} />
+
     }
     else if (this.state.activeTab === "list") {
-      return <List />
+      return <List listItems={this.state.items} />
 
     }
     else if (this.state.activeTab === "pay") {
@@ -73,11 +73,11 @@ class App extends React.Component {
       <div>
         <h1>Bakery</h1>
         <ul className="header">
-          <li><button className={this.state.activeTab === "add" ? "btn btn-primary" : "btn btn-light"}
+          <li><button className="btn btn-primary" isSelected={this.state.activeTab === "add" ? "btn btn-primary" : "btn btn-light"}
             onClick={this.selectAdd}> Add </button></li>
-          <li><button className={this.state.activeTab === "list" ? "btn btn-primary" : "btn btn-light"}
+          <li><button className="btn btn-primary"  isSelected={this.state.activeTab === "list" ? "btn btn-primary" : "btn btn-light"}
             onClick={this.selectList}> List </button></li>
-          <li><button className={this.state.activeTab === "pay" ? "btn btn-primary" : "btn btn-light"}
+          <li><button className="btn btn-primary"  isSelected={this.state.activeTab === "pay" ? "btn btn-primary" : "btn btn-light"}
             onClick={this.selectPay}> Pay </button></li>
         </ul>
         <div className="content">

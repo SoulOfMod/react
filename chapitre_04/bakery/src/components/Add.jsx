@@ -39,7 +39,8 @@ class Add extends React.Component {
         </div>
         <div><input type="range" min={1} max={10} value={this.state.price} onChange={this.updatePrice}></input>
           <p>{this.state.price}</p>
-        </div></section>
+        </div>
+      </section>
     );
   }
 
