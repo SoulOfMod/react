@@ -40,7 +40,7 @@ class App extends React.Component {
 
   componentDidMount() {
 
-    fetch("https://restcountries.eu/rest/v2/name/france")
+    fetch("http://localhost:8000/countries")
       .then(response => response.json())
       .then(result => {
 
