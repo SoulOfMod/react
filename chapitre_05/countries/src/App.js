@@ -22,40 +22,46 @@ class App extends React.Component {
 
 
   getCountry(country) {
-    // console.log("country get:" , country);
+    fetch("http://localhost:8000/countries/" + country)
 
-    fetch("https://restcountries.eu/rest/v2/name/" + country)
       .then(response => response.json())
       .then(result => {
 
+        // console.log("resultat :" , typeof(result));
+        // console.log("resultat :" , result.countryFind);
+        // console.log("resultat :" , result.countryFind[0].name);
+
         this.setState({
-          name: result[0].name,
-          capital: result[0].capital,
-          flag: result[0].flag,
-          population: result[0].population,
-          region: result[0].region
+          name: result.countryFind[0].name,
+          capital: result.countryFind[0].capital,
+          flag: result.countryFind[0].flag,
+          population: result.countryFind[0].population,
+          region: result.countryFind[0].region
         })
       })
   }
 
-  componentDidMount() {
 
-    fetch("http://localhost:8000/countries")
+  componentDidMount() {
+    fetch("http://localhost:8000/countries/France")
       .then(response => response.json())
       .then(result => {
 
         this.setState({
-          name: result[0].name,
-          capital: result[0].capital,
-          flag: result[0].flag,
-          population: result[0].population,
-          region: result[0].region
+          name: result.countryFind[0].name,
+          capital: result.countryFind[0].capital,
+          flag: result.countryFind[0].flag,
+          population: result.countryFind[0].population,
+          region: result.countryFind[0].region
         })
       })
       .catch(err => console.error("err dans le fetch du componentDidMount:", err))
 
-    console.log("Je suis dans componentDidMount");
   }
+
+
+
+
 
   render() {
     return (
