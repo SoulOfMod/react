@@ -40,8 +40,7 @@ class App extends React.Component {
         })
       })
   }
-
-
+  
   componentDidMount() {
     fetch("http://localhost:8000/countries/France")
       .then(response => response.json())

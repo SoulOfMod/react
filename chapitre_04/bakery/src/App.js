@@ -61,7 +61,7 @@ class App extends React.Component {
 
     }
     else if (this.state.activeTab === "pay") {
-      return <Pay />
+      return <Pay  items={this.state.items}/>
 
     }
 
