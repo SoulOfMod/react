@@ -61,7 +61,7 @@ class App extends React.Component {
 
     }
     else if (this.state.activeTab === "pay") {
-      return <Pay  items={this.state.items}/>
+      return <Pay  Items={this.state.items}/>
 
     }
 
@@ -73,12 +73,12 @@ class App extends React.Component {
       <div>
         <h1>Bakery</h1>
         <ul className="header">
-          <li><button className="btn btn-primary" isSelected={this.state.activeTab === "add" ? "btn btn-primary" : "btn btn-light"}
-            onClick={this.selectAdd}> Add </button></li>
-          <li><button className="btn btn-primary"  isSelected={this.state.activeTab === "list" ? "btn btn-primary" : "btn btn-light"}
-            onClick={this.selectList}> List </button></li>
-          <li><button className="btn btn-primary"  isSelected={this.state.activeTab === "pay" ? "btn btn-primary" : "btn btn-light"}
-            onClick={this.selectPay}> Pay </button></li>
+          <li><Button  isselected={this.state.activeTab === "add" }
+            onClick={this.selectAdd}> Add </Button></li>
+          <li><Button   isselected={this.state.activeTab === "list" }
+            onClick={this.selectList}> List </Button></li>
+          <li><Button   isselected={this.state.activeTab === "pay" }
+            onClick={this.selectPay}> Pay </Button></li>
         </ul>
         <div className="content">
           {this.Conditionrender()}

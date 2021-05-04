@@ -10,9 +10,13 @@ class List extends React.Component {
     return (
       <div>
         <h1>List</h1>
-        <ul className="list-group">
+        <ul>
           {this.props.listItems.map(curr => {
-            return (<li>{curr.name} - {curr.price} </li>)
+            return (
+              <li>
+                <p>Nom du produit:  {curr.name}</p>
+                <p>Prix:  {curr.price}€</p>
+              </li>)
           })}
         </ul>
       </div>
