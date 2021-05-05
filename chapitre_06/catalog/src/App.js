@@ -1,34 +1,32 @@
 import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import './App.css';
-import Movie from "./components/Movie.json";
-import Card from "./components/Card.json";
+import Acceuil from "./pages/Acceuil";
+import Movie from "./pages/Movie";
 
 
 class App extends React.Component {
 
-  constructor() {
-    super()
-    this.state = {
-      id: 0,
-      title: "",
-      director: "",
-      stars: [],
-      image: "",
-      description: "",
-    }
-  }
+ 
 
   render() {
     return (
+      <BrowserRouter>
 
-      
-      movie.map((movie) => {
         <div>
-          <h1>Movies</h1>
-          <Card id={this.state.id} title={this.state.title} director={this.state.director} stars={this.state.stars} image={this.state.image} description={this.state.description} />
-        </div>
 
-      })
+          <h1>Movies</h1>
+
+          <Acceuil />
+
+        </div>
+        <Switch>
+
+          <Route path = '/:id' exact component = {Movie}></Route>
+
+        </Switch>
+
+      </BrowserRouter>
     );
   }
 }
