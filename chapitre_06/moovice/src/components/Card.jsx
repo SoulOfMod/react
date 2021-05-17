@@ -5,9 +5,9 @@ export class Card extends Component {
 
         return (
             <div>
-                <img src={this.props.image} alt="" />
+                <img src={`https://image.tmdb.org/t/p/w300${this.props.poster_path}`} alt="" />
                 <p>Title: {this.props.title}</p>
-                <p>Release date : {this.props.release}</p>
+                <p>Release date : {this.props.release_date}</p>
                 <p>Description : {this.props.overview}</p>
             </div>
         )

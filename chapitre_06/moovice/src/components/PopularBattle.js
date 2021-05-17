@@ -4,9 +4,12 @@ import Card from '../components/Card'
 
 class PopularBattle extends Component {
 
-    state = {
-        movies: [],
-        indexFirstMovieOfCurrentBattle: 0
+    constructor() {
+        super()
+        this.state = {
+            movies: [],
+            indexFirstMovieOfCurrentBattle: 0
+        }
     }
 
     componentDidMount() {
@@ -22,7 +25,6 @@ class PopularBattle extends Component {
     }
 
     updateIndexMovieBattle = (movieId) => {
-        console.log("updateIndexMovieBattle", typeof movieId);
 
         const idsFavorites = JSON.parse(localStorage.getItem("favorites")) || []
 

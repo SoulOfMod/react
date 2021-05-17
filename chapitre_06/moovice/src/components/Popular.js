@@ -16,9 +16,9 @@ export class Popular extends Component {
         fetch("https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=e441f8a3a151d588a4932d2c5d310769")
             .then(response => response.json())
             .then(result => {
-                console.log(result);
-                console.log(result.results);
-                console.log(result.results[0]);
+                // console.log("result" , result);
+                // console.log("results" ,result.results);
+                // console.log("results 1st item" ,result.results[0]);
 
 
                 this.setState({
@@ -42,9 +42,9 @@ export class Popular extends Component {
                         const url = "https://image.tmdb.org/t/p/w300/"
                         return <li>
                             <Card
-                                image={url + elem.poster_path}
+                                poster_path={url + elem.poster_path}
                                 title={elem.title}
-                                release={elem.release_date}
+                                release_date={elem.release_date}
                                 overview={elem.overview}
                             />
                         </li>
