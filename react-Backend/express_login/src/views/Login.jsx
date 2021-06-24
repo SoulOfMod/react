@@ -21,7 +21,7 @@ const Login = () => {
 
     const login = async () => {
         try {
-            const response = await axios.post("http://localhost:8003/auth/login", { email, password, firstName, surname, dateOfBirth })
+            const response = await axios.post("http://localhost:8000/auth/login", { email, password, firstName, surname, dateOfBirth })
 
             if (response.status === 200) {
                 localStorage.setItem("token", response.data.token)
